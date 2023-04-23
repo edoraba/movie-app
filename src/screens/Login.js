@@ -3,7 +3,7 @@ import React from 'react'
 import { formgroup, fp, head1, head2, input, label, link, link2 } from '../common/formcss'
 import { button1 } from '../common/button'
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <View style={styles.container1}>
@@ -12,18 +12,27 @@ const Login = () => {
                 <Text style={head2}>Sign in to continue</Text>
                 <View style={formgroup}>
                     <Text style={label}>Email</Text>
-                    <TextInput style={input} />
+                    <TextInput 
+                        style={input} 
+                        placeholder="Email"
+                    />
                 </View>
                 <View style={formgroup}>
                     <Text style={label}>Password</Text>
-                    <TextInput style={input} />
+                    <TextInput 
+                        style={input} 
+                        placeholder="Password"
+                    />
                 </View>
                 <View style={fp}>
                     <Text style={link}>Forgot Password?</Text>
                 </View>
                 <Text style={button1}>Login</Text>
                 <Text style={link2}>Don't have an account? 
-                    <Text style={link}> Create a new account</Text>
+                    <Text 
+                        style={link}
+                        onPress={() => navigation.navigate('signup')}
+                    > Create a new account</Text>
                 </Text>
             </View>
         </View>

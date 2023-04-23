@@ -2,12 +2,18 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { button1 } from '../common/button'
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
   return (
     <View>
         <Text style={styles.head}>Welcome</Text>
-        <Text style={button1}>Login</Text>
-        <Text style={button1}>Signup</Text>
+        <Text 
+          style={button1}
+          onPress={() => navigation.navigate('login')}  
+        >Login</Text>
+        <Text 
+          style={button1}
+          onPress={() => navigation.navigate('signup')}  
+        >Signup</Text>
     </View>
   )
 }

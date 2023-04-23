@@ -1,17 +1,20 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View, ScrollView } from 'react-native'
 import React from 'react'
 import { formgroup, fp, head1, head2, input, label, link, link2 } from '../common/formcss'
 import { button1 } from '../common/button'
 
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <View style={styles.container1}>
-            <View style={styles.s2}>
+            <ScrollView style={styles.s2}>
                 <Text style={head1}>Create a new account</Text>
                 <Text style={link2}>Already registered?&nbsp;
-                    <Text style={link}>Login here</Text>
+                    <Text 
+                        style={link}
+                        onPress={() => navigation.navigate('login')}
+                    >Login here</Text>
                 </Text>
                 <View style={formgroup}>
                     <Text style={label}>Name</Text>
@@ -35,7 +38,7 @@ const Signup = () => {
                 </View>   
 
                 <Text style={button1}>Signup</Text>
-            </View>
+            </ScrollView>
         </View>
     </View>
   )
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        padding: 20
+        padding: 20,
     },
     formgroup: {
         display: 'flex',
